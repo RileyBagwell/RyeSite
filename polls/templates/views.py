@@ -10,3 +10,8 @@ def index(request):
 def home(request):
     template = loader.get_template("polls/home.html")
     return render(request, 'polls/home.html')
+
+
+def test(request):
+    template = loader.get_template("polls/test.html")
+    return render(request, "polls/test.html")

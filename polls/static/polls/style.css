@@ -1,11 +1,60 @@
-.box {
-  border: 1px solid green;
-  padding: 10%;
-  margin: 2%;
+body {
+  background: linear-gradient(to right, #004DE0, #00a2ff);
+  font-family: Impact, sans-serif;
+  text-align: center;
+  margin-top: 100px;
 }
 
-.testDiv {
-  border: 5px outset red;
-  background-color: lightblue;
-  text-align: center;
+.menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
+
+.menu-item {
+  position: relative;
+  font-size: 50px;
+  color: white;
+  text-transform: uppercase;
+  margin: 10px 0;
+  transition: color 0.3s ease-in-out;
+  display: inline-block;
+  text-decoration: none;
+  padding: 5px 20px;
+}
+
+/* Different skew values for each menu item */
+.menu-item:nth-child(1) { transform: skew(-5deg) rotate(-5deg); }
+.menu-item:nth-child(2) { transform: skew(10deg) rotate(10deg); }
+.menu-item:nth-child(3) { transform: skew(5deg) rotate(5deg); }
+.menu-item:nth-child(4) { transform: skew(-8deg) rotate(-8deg); }
+.menu-item:nth-child(5) { transform: skew(10deg) rotate(10deg); }
+.menu-item:nth-child(6) { transform: skew(-6deg); }
+.menu-item:nth-child(7) { transform: skew(-9deg); }
+.menu-item:nth-child(8) { transform: skew(-14deg); }
+.menu-item:nth-child(9) { transform: skew(-7deg); }
+
+/* Hover effect */
+.menu-item:hover {
+  color: black;
+}
+
+/* Triangle effect */
+.menu-item::before {
+  content: '';
+  position: absolute;
+  left: -50px;
+  top: 50%;
+  width: 30px;
+  height: 30px;
+  background: white;
+  clip-path: polygon(0 0, 100% 50%, 0 100%);
+  transform: translateY(-50%);
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.menu-item:hover::before {
+  opacity: 1;
+}
+
