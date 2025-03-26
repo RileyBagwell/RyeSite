@@ -7,12 +7,21 @@
     <link rel="stylesheet" href="{% static 'polls/style.css' %}">
 </head>
 <body>
-    <div class="menu">
-        <div class="menu-item"><span>About Me</span></div>
-        <div class="menu-item">Projects</div>
-        <div class="menu-item">Uses</div>
-        <div class="menu-item">Contact</div>
-        <div class="menu-item">Fifth Thing</div>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="sidebar-main">MAIN</div>
     </div>
+    
+    <!-- Menu Content -->
+    <div class="menu-wrapper">
+        <div class="menu">
+            <a href="about" class="menu-item"><span>About Me</span></a>
+            <a href="projects" class="menu-item">Projects</a>
+            <a href="uses" class="menu-item">Uses</a>
+            <a href="contact" class="menu-item">Contact</a>
+            <a href="about" class="menu-item">Fifth Thing</a>
+        </div>
+    </div>
+    
 </body>
 </html>

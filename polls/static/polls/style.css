@@ -5,15 +5,50 @@ body {
   margin-top: 100px;
 }
 
+.sidebar {
+  width: 15%;
+  height: 100%;
+  background: white;
+  position: fixed;
+  left: 0;
+  top: 0;
+  box-shadow: 5px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+.sidebar-main {
+  font-size: 100px;
+  transform: rotate(90deg);
+  padding-left: 100%
+}
+
+.bottom-notice {
+  font-family: serif;
+  width: 100%;
+  height: 5%;
+  background: white;
+  position: fixed;
+  bottom: 0;
+  left: 15%;
+  z-index: 2;
+}
+
 .menu {
+  padding-right: 10%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  height: 80vh;
+}
+
+.menu-wrapper {
+  margin-left: 150px; /* Adjust this so menu starts after sidebar */
+  width: 100%;
 }
 
 .menu-item {
   position: relative;
-  font-size: 50px;
+  font-size: 80px;
   color: white;
   text-transform: uppercase;
   margin: 10px 0;
@@ -24,15 +59,15 @@ body {
 }
 
 /* Different skew values for each menu item */
-.menu-item:nth-child(1) { transform: skew(-5deg) rotate(-5deg); }
-.menu-item:nth-child(2) { transform: skew(10deg) rotate(10deg); }
-.menu-item:nth-child(3) { transform: skew(5deg) rotate(5deg); }
-.menu-item:nth-child(4) { transform: skew(-8deg) rotate(-8deg); }
-.menu-item:nth-child(5) { transform: skew(10deg) rotate(10deg); }
-.menu-item:nth-child(6) { transform: skew(-6deg); }
-.menu-item:nth-child(7) { transform: skew(-9deg); }
-.menu-item:nth-child(8) { transform: skew(-14deg); }
-.menu-item:nth-child(9) { transform: skew(-7deg); }
+.menu-item:nth-child(1) { transform: skew(-5deg) rotate(-5deg); color: #66FCFA; }
+.menu-item:nth-child(2) { transform: skew(10deg) rotate(10deg); color: #0AC9FD; }
+.menu-item:nth-child(3) { transform: skew(5deg) rotate(5deg); color: #68E5FB; }
+.menu-item:nth-child(4) { transform: skew(-8deg) rotate(-8deg); color: #67FDFB; }
+.menu-item:nth-child(5) { transform: skew(10deg) rotate(10deg); color: #0CC9F9; }
+.menu-item:nth-child(6) { transform: skew(-6deg); color: #67E5FA; }
+.menu-item:nth-child(7) { transform: skew(-9deg); color: #68FEFC; }
+.menu-item:nth-child(8) { transform: skew(-14deg); color: #68E5FA; }
+.menu-item:nth-child(9) { transform: skew(-7deg); color: #0BCAFC}
 
 /* Hover effect */
 .menu-item:hover {
@@ -43,7 +78,7 @@ body {
 .menu-item::before {
   content: '';
   position: absolute;
-  left: -50px;
+  left: 20px;
   top: 50%;
   width: 30px;
   height: 30px;
@@ -54,7 +89,20 @@ body {
   transition: opacity 0.3s ease-in-out;
 }
 
+/* Customer clip-path shapes */
+/* (left-right, top-down) */
+.menu-item:nth-child(1)::before { clip-path: polygon(100% 0%, 90% 100%, 0% 50%); width: 200px; height: 60px }
+.menu-item:nth-child(2)::before { clip-path: polygon(100% 0%, 90% 100%, 0% 50%); width: 200px; height: 60px; }
+.menu-item:nth-child(3)::before { clip-path: polygon(100% 0%, 90% 100%, 0% 50%); width: 100px; height: 40px; }
+.menu-item:nth-child(4)::before { clip-path: polygon(100% 0%, 90% 100%, 0% 50%); width: 200px; height: 60px }
+.menu-item:nth-child(5)::before { clip-path: polygon(100% 0%, 90% 100%, 0% 50%); width: 250px; height: 60px }
+.menu-item:nth-child(6)::before { clip-path: polygon(5% 10%, 100% 50%, 5% 90%); width: 55px; height: 45px; }
+.menu-item:nth-child(7)::before { clip-path: polygon(0 5%, 100% 50%, 0 95%); width: 50px; }
+.menu-item:nth-child(8)::before { clip-path: polygon(0 0, 100% 70%, 0 100%); width: 40px; }
+.menu-item:nth-child(9)::before { clip-path: polygon(0 0, 100% 50%, 0 100%); width: 50px; }
+
+
 .menu-item:hover::before {
-  opacity: 1;
+  opacity: .7;
 }
 
