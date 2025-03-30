@@ -1,4 +1,5 @@
 body {
+  width: 85%;
   background: linear-gradient(to right, #004DE0, #00a2ff);
   font-family: Impact, sans-serif;
   text-align: center;
@@ -13,12 +14,19 @@ body {
   left: 0;
   top: 0;
   box-shadow: 5px 0px 10px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: end;
 }
 
 .sidebar-main {
-  font-size: 100px;
-  transform: rotate(90deg);
-  padding-left: 100%
+  font-size: 200px;
+  transform-origin: center;
+  white-space: nowrap;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(90deg);
 }
 
 .bottom-notice {
@@ -33,7 +41,7 @@ body {
 }
 
 .menu {
-  padding-right: 10%;
+  padding-left: 15%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -52,7 +60,7 @@ body {
   color: white;
   text-transform: uppercase;
   margin: 10px 0;
-  transition: color 0.3s ease-in-out;
+  transition: color 0.15s ease-in-out;
   display: inline-block;
   text-decoration: none;
   padding: 5px 20px;
@@ -86,17 +94,17 @@ body {
   clip-path: polygon(0 0, 100% 50%, 0 100%);
   transform: translateY(-50%);
   opacity: 0;
-  transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.15s ease-in-out;
 }
 
 /* Customer clip-path shapes */
 /* (left-right, top-down) */
-.menu-item:nth-child(1)::before { clip-path: polygon(100% 0%, 90% 100%, 0% 50%); width: 200px; height: 60px }
-.menu-item:nth-child(2)::before { clip-path: polygon(100% 0%, 90% 100%, 0% 50%); width: 200px; height: 60px; }
-.menu-item:nth-child(3)::before { clip-path: polygon(100% 0%, 90% 100%, 0% 50%); width: 100px; height: 40px; }
-.menu-item:nth-child(4)::before { clip-path: polygon(100% 0%, 90% 100%, 0% 50%); width: 200px; height: 60px }
-.menu-item:nth-child(5)::before { clip-path: polygon(100% 0%, 90% 100%, 0% 50%); width: 250px; height: 60px }
-.menu-item:nth-child(6)::before { clip-path: polygon(5% 10%, 100% 50%, 5% 90%); width: 55px; height: 45px; }
+.menu-item:nth-child(1)::before { clip-path: polygon(100% 0%, 90% 100%, 0% 50%); width: 350px; height: 60px }
+.menu-item:nth-child(2)::before { clip-path: polygon(80% 0%, 90% 100%, 0% 50%); width: 350px; height: 60px; }
+.menu-item:nth-child(3)::before { clip-path: polygon(100% 0%, 90% 100%, 0% 50%); width: 180px; height: 40px; }
+.menu-item:nth-child(4)::before { clip-path: polygon(100% 0%, 90% 100%, 0% 50%); width: 300px; height: 60px }
+.menu-item:nth-child(5)::before { clip-path: polygon(90% 0%, 100% 100%, 0% 50%); width: 400px; height: 60px }
+.menu-item:nth-child(6)::before { clip-path: polygon(5% 10%, 100% 50%, 5% 90%); width: 50px; height: 45px; }
 .menu-item:nth-child(7)::before { clip-path: polygon(0 5%, 100% 50%, 0 95%); width: 50px; }
 .menu-item:nth-child(8)::before { clip-path: polygon(0 0, 100% 70%, 0 100%); width: 40px; }
 .menu-item:nth-child(9)::before { clip-path: polygon(0 0, 100% 50%, 0 100%); width: 50px; }
